@@ -8,7 +8,7 @@ public class StreamService {
        this.studentGroup = studentGroup;
     }
 
-    public void sortingStream(List<Stream> stream) {
+    public void SortStream(List<stream> stream) {
         Collection.sort(stream, new StreamCamparator());
     }
     
