@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+ public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student(4, "aab", "aab", "aab");
+        Student student2 = new Student(2, "aaa", "aaa", "aaa");
+        Student student3 = new Student(3, "Aaa", "Aaa", "Aaa");
+        Student student4 = new Student(1, "bbb", "bbb", "bbb");
+        List<Student> studentList = new ArrayList<>();
+        StudentGroup studentGroup = new StudentGroup(studentList);
+        studentGroup.studentList.add(student1);
+        studentGroup.studentList.add(student2);
+        studentGroup.studentList.add(student3);
+        studentGroup.studentList.add(student4);
+        StudentGroupIterator iterator = new StudentGroupIterator(studentGroup);
+        while (iterator.hasNext()) {
+              Student student = iterator.next();
+              if(student.StudentId == 3)
+              iterator.remove();
+            
+        }
+        iterator = new StudentGroupIterator(studentGroup);
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
+}       
